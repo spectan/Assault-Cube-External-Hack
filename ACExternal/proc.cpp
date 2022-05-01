@@ -84,12 +84,7 @@ std::string ProcessIdToName(DWORD processId)
 	{
 		printf("Error OpenProcess : %lu", GetLastError());
 	}
-	return ret;
-}
-
-std::string basename(const std::string& pathname)
-{
-	return { std::find_if(pathname.rbegin(), pathname.rend(),
-						 [](char c) { return c == '/' || c== '\\'; }).base(),
-			pathname.end() };
+	return { std::find_if(ret.rbegin(), ret.rend(),
+						 [](char c) { return c == '/' || c == '\\'; }).base(),
+			ret.end() };
 }

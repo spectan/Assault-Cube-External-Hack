@@ -16,7 +16,7 @@ int main()
     const int newValue = 999;
 
     DWORD procId = GetProcId(L"ac_client.exe");
-    std::string procName = basename(ProcessIdToName(procId));
+    std::string procName = ProcessIdToName(procId);
 
     if (procId) {
         hProcess = OpenProcess(PROCESS_ALL_ACCESS, NULL, procId);
@@ -29,7 +29,7 @@ int main()
         healthAddr = FIndDMAAddy(hProcess, localPlayerPtr, { 0xf8 });
         ammoAddr = FIndDMAAddy(hProcess, localPlayerPtr, { 0x374, 0x14, 0x0 });
 
-        std::cout << "Activated.\nNumpad 1 for infinite health. Numpad2 for infinite ammo. Numpad 3 for no recoil.\n";
+        std::cout << "Activated.\nNumpad 1 for infinite health. Numpad 2 for infinite ammo. Numpad 3 for no recoil.\n";
     }
     else {
         std::cout << "Process not found, press enter to exit\n";
