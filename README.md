@@ -1,1 +1,1 @@
-ACExternal
+  A simple external game hack for the game Assault Cube. It's my first foray into cpp as well as directly interacting with addresses and pointers. Largely assisted by the resources from the [GuidedHacking](https://guidedhacking.com/) community.
